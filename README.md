@@ -75,12 +75,12 @@ Access the booking system at: **[7209booking.com](http://7209booking.com)**
    - In the "Pages" section, enter `7209booking.com` in the custom domain field
    - Click "Save"
    - Configure your DNS settings with your domain provider:
-     - Add a CNAME record pointing to `danny2078.github.io`
-     - Or add A records pointing to GitHub Pages IPs:
+     - For the apex domain (7209booking.com), add A records pointing to GitHub Pages IPs:
        - 185.199.108.153
        - 185.199.109.153
        - 185.199.110.153
        - 185.199.111.153
+     - For www subdomain (optional), add a CNAME record pointing to `danny2078.github.io`
 
 4. **Wait for DNS Propagation**:
    - DNS changes can take up to 24-48 hours to propagate

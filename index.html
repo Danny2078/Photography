@@ -1998,7 +1998,7 @@
                         
                         // Compare start times
                         const aStartTime = a.startTime || (a.time ? a.time.split(' - ')[0] : '00:00');
-                        const bStartTime = a.startTime || (a.time ? a.time.split(' - ')[0] : '00:00');
+                        const bStartTime = b.startTime || (b.time ? b.time.split(' - ')[0] : '00:00');
                         return this.timeToMinutes(aStartTime) - this.timeToMinutes(bStartTime);
                     });
                 
@@ -3064,28 +3064,6 @@
                 setTimeout(() => {
                     liveRegion.textContent = '';
                 }, 3000);
-            }
-
-            resetTimeSelection() {
-                // Clear selections
-                this.selectedStartTime = null;
-                this.selectedEndTime = null;
-                document.getElementById('startTime').value = '';
-                document.getElementById('endTime').value = '';
-                
-                // Reset UI
-                document.getElementById('endTimeSelection').style.display = 'none';
-                document.getElementById('durationDisplay').style.display = 'none';
-                
-                // Clear button selections
-                document.querySelectorAll('.time-button').forEach(btn => {
-                    btn.classList.remove('selected');
-                });
-                
-                // Regenerate start time buttons
-                this.generateStartTimeButtons();
-                this.renderTimeline();
-                this.validateForm();
             }
         }
 
